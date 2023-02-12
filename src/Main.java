@@ -3,11 +3,23 @@ public class Main {
 
         int account = 100; // счёт клиента
 
-        int replenishment1 = 300; // пополнение счёта
-        int replenishment2 = 1100; // пополнение счёта
+        int replenishment = 1100; // сумма пополнения
 
-        System.out.println((account + replenishment1) + " Бонусы не начисляются");
-        System.out.println((account + (replenishment2 / 100) + replenishment2) + " Бонусы начисляются");
+        int limit = 1000; // сумма пополнения для получения бонусов
+
+        int bonus;
+        int result;
+        if (replenishment > limit) {
+            bonus = replenishment / 100;
+            result = account + bonus + replenishment;
+            System.out.println("Начислено " + bonus + " бонусных рублей" + ", на счету " + result + " рублей . ");
+        } else {
+            bonus = 0;
+            result = account + replenishment;
+            System.out.println("Бонусов нет" + ", на счету " + result + " рублей ");
+        }
     }
-
 }
+
+
+
